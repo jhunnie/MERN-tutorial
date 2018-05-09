@@ -11,7 +11,7 @@ class IndexItem extends Component {
         this.addItemService = new ItemService();
     }
     componentDidMount() {
-        axios.get('http://localhost:4200/items')
+        axios.get('http://localhost:8000/items')
             .then(response => {
                 this.setState({ items: response.data });
             })

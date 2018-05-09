@@ -33,7 +33,8 @@ itemRouter.route('/').get(function (req, res) {
 itemRouter.route('/edit/:id').get(function (req, res) {
   var id = req.params.id;
   Item.findById(id, function (err, item){
-      res.json(item);
+    if (err) console.log('error in /edit/:id: ', err)
+    res.json(item);
   });
 });
 
